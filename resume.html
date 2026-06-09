@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milton Ready | Cybersecurity Resume</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      :root {
+        --blue: #0b6ff3;
+        --blue-dark: #061b3d;
+        --text: #17233a;
+        --muted: #5f7190;
+        --light: #f6f9fd;
+        --white: #ffffff;
+        --line: #dbe6f3;
+        --green: #16a34a;
+        --shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+        --radius: 14px;
+      }
+
+      body {
+        font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .nav {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+      }
+
+      .nav-wrap {
+        max-width: 1050px;
+        margin: auto;
+        padding: 0.8rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 800;
+        color: var(--blue);
+        font-size: 1.25rem;
+      }
+
+      .back-link {
+        color: var(--blue-dark);
+        font-weight: 800;
+      }
+
+      .page {
+        max-width: 1050px;
+        margin: 2rem auto;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .header {
+        background:
+          radial-gradient(circle at 88% 25%, rgba(30, 111, 255, 0.28), transparent 30%),
+          linear-gradient(135deg, #061735, #0a2e66 58%, #041329);
+        color: #ffffff;
+        padding: 2.25rem;
+      }
+
+      .header h1 {
+        font-size: 2.15rem;
+        line-height: 1.1;
+        margin-bottom: 0.4rem;
+      }
+
+      .headline {
+        color: #d8e8ff;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem 1.25rem;
+        font-size: 0.92rem;
+        color: #e5efff;
+      }
+
+      .content { padding: 2rem; }
+
+      .section { margin-bottom: 1.75rem; }
+
+      .section-title {
+        font-size: 1.25rem;
+        color: var(--blue-dark);
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.45rem;
+        border-bottom: 3px solid var(--blue);
+        display: inline-block;
+      }
+
+      .summary {
+        color: #2d3b52;
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1rem;
+        background: #ffffff;
+      }
+
+      .card h3 {
+        color: var(--blue);
+        font-size: 1rem;
+        margin-bottom: 0.45rem;
+      }
+
+      ul { padding-left: 1.1rem; }
+
+      li {
+        margin: 0.35rem 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      li::marker { color: var(--green); }
+
+      .job {
+        border-left: 4px solid var(--blue);
+        padding: 1rem 1rem 1rem 1.15rem;
+        border-radius: 10px;
+        background: #fbfdff;
+        border-top: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 1rem;
+      }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .job h3 {
+        color: var(--blue);
+        font-size: 1rem;
+      }
+
+      .company {
+        font-weight: 800;
+        color: var(--text);
+      }
+
+      .date {
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .resume-actions {
+        text-align: center;
+        margin: 1rem 0 2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.45rem;
+        border-radius: 7px;
+        font-weight: 800;
+        background: var(--blue);
+        color: #ffffff;
+      }
+
+      .print-note {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 0.7rem;
+      }
+
+      @media print {
+        .nav, .resume-actions { display: none; }
+        body { background: #ffffff; }
+        .page {
+          margin: 0;
+          max-width: none;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        .header { padding: 1.4rem 1.6rem; }
+        .content { padding: 1.4rem 1.6rem; }
+        .section { margin-bottom: 1.1rem; }
+        .card, .job { break-inside: avoid; }
+      }
+
+      @media (max-width: 750px) {
+        .page { margin: 0; border-radius: 0; }
+        .grid { grid-template-columns: 1fr; }
+        .job-head { flex-direction: column; }
+        .date { white-space: normal; }
+        .nav-wrap { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">Milton Ready</a>
+        <a class="back-link" href="index.html">← Back to Portfolio</a>
+      </div>
+    </nav>
+
+    <main class="page">
+      <header class="header">
+        <h1>Milton Grady Ready Jr. (“Bo” Ready)</h1>
+        <p class="headline">
+          Cybersecurity Analyst | SOC Operations | Python Automation | U.S. Army Veteran | Data Analytics
+        </p>
+
+        <div class="contact">
+          <span>Wamego, Kansas</span>
+          <span>785-955-0745</span>
+          <span>bo.ready@yahoo.com</span>
+          <span>linkedin.com/in/readym</span>
+          <span>boready.github.io/milton-ready-portfolio</span>
+        </div>
+      </header>
+
+      <section class="content">
+        <section class="section">
+          <h2 class="section-title">Professional Summary</h2>
+          <div class="summary">
+            <p>
+              Cybersecurity analyst and U.S. Army veteran with a Bachelor of Science in Information Networking &
+              Telecommunications, Cybersecurity concentration, and Applied Data Analytics Certificate from Fort Hays
+              State University. Experienced with Security Operations Center (SOC) activities, SIEM technologies, threat
+              detection, vulnerability assessment, network security, Python automation, systems administration, and data
+              analytics through hands-on cybersecurity projects, workforce development experience, and military leadership.
+            </p>
+            <p>
+              Contributed to a student Security Operations Center utilizing Wazuh for dashboard development, detection
+              creation, alert review, ticket management, reporting, and security monitoring operations. Recognized for
+              strong problem-solving abilities, technical adaptability, leadership experience, and a commitment to
+              continuous learning.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Security Operations</h3>
+              <p class="note">Security Monitoring, Alert Triage, Threat Detection, Threat Analysis, Incident Response Fundamentals, SIEM Operations</p>
+            </div>
+            <div class="card">
+              <h3>Security Tools</h3>
+              <p class="note">Wazuh, Splunk, Nessus, Wireshark, Nmap, Metasploit, Burp Suite, Snort, Rapid7</p>
+            </div>
+            <div class="card">
+              <h3>Networking & Systems</h3>
+              <p class="note">TCP/IP, DNS, DHCP, VPNs, VLANs, Routing, Switching, Windows, Windows Server, Linux, Ubuntu, RHEL</p>
+            </div>
+            <div class="card">
+              <h3>Programming & Analytics</h3>
+              <p class="note">Python, SQL, HTML, CSS, Data Analytics, Big Data Analytics, Reporting, Visualization</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="card">
+            <h3>Fort Hays State University</h3>
+            <p><strong>Bachelor of Science – Information Networking & Telecommunications</strong></p>
+            <p class="note">Cybersecurity Concentration | Applied Data Analytics Certificate | Graduated May 15, 2026 | GPA: 3.68 | Dean’s Honor Roll</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Certifications</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Current</h3>
+              <ul>
+                <li>SOC Essentials Certified</li>
+                <li>CCNA Fundamentals</li>
+                <li>DevOps Career Pathway Certificate</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Previous / Expired</h3>
+              <ul>
+                <li>CompTIA Security+ — Expired 2025</li>
+                <li>EC-Council Certified Ethical Hacker (CEH) — Expired</li>
+                <li>Splunk Core Certified User — Expired</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Cybersecurity Projects</h2>
+
+          <div class="job">
+            <div class="job-head">
+              <div>
+                <h3>Student Security Operations Center (SOC)</h3>
+                <p class="company">Wazuh Indexer Team</p>
+              </div>
+            </div>
+            <ul>
+              <li>Supported operation of a student Security Operations Center utilizing Wazuh SIEM technologies.</li>
+              <li>Built dashboards and visualizations to support monitoring, security analysis, and reporting.</li>
+              <li>Created and tuned security detections, reviewed alerts, worked tickets, and documented findings.</li>
+              <li>Generated reports and operational metrics supporting SOC workflows and security monitoring activities.</li>
+            </ul>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Vulnerability Management — Nessus</h3>
+              <ul>
+                <li>Conducted vulnerability assessments and reviewed scan findings.</li>
+                <li>Analyzed risk and documented remediation recommendations.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Splunk Security Projects</h3>
+              <ul>
+                <li>Built dashboards and performed log analysis.</li>
+                <li>Conducted event correlation and generated security reports.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Network Analysis — Wireshark</h3>
+              <ul>
+                <li>Captured and analyzed network traffic.</li>
+                <li>Performed protocol analysis and troubleshooting.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Python Automation</h3>
+              <ul>
+                <li>Built automation scripts, file processing utilities, logging tools, and coursework applications.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Professional Experience</h2>
+
+          <div class="job">
+            <div class="job-head">
+              <div>
+                <h3>Technical Sales Specialist</h3>
+                <p class="company">ERA Solutions</p>
+              </div>
+              <div class="date">July 2023 – July 2024</div>
+            </div>
+            <ul>
+              <li>Served as a workforce development and apprenticeship consultant supporting employers, educational institutions, workforce agencies, and business leaders.</li>
+              <li>Worked with more than 20 organizations to assess hiring needs, identify skill gaps, and support workforce planning.</li>
+              <li>Secured more than $200,000 in workforce incentives, grants, and funding opportunities.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-head">
+              <div>
+                <h3>Transition Advisor</h3>
+                <p class="company">ERA Solutions</p>
+              </div>
+              <div class="date">January 2023 – July 2023</div>
+            </div>
+            <ul>
+              <li>Provided career transition support to 109 military service members preparing for civilian employment and technical career fields.</li>
+              <li>Achieved approximately 90% placement success through transition planning, resume support, interview preparation, and certification guidance.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-head">
+              <div>
+                <h3>Owner / Operator</h3>
+                <p class="company">Ready Trucking LLC</p>
+              </div>
+              <div class="date">September 2021 – January 2023</div>
+            </div>
+            <ul>
+              <li>Managed transportation operations, FMCSA compliance, scheduling, customer relations, invoicing, and business administration.</li>
+              <li>Maintained a 98% on-time delivery rate and perfect safety record while controlling operational risk.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-head">
+              <div>
+                <h3>Construction Equipment Repairer (91L) / Wheeled Vehicle Mechanic (91B) / Sergeant (SGT)</h3>
+                <p class="company">Kansas Army National Guard</p>
+              </div>
+              <div class="date">November 2005 – February 2015</div>
+            </div>
+            <ul>
+              <li>Served nearly ten years in the Kansas Army National Guard supporting maintenance, readiness, troubleshooting, and documentation.</li>
+              <li>Began as a 91L Construction Equipment Repairer and later reclassified to 91B Wheeled Vehicle Mechanic.</li>
+              <li>Deployed to Egypt, was promoted to Sergeant (SGT), led junior Soldiers, and maintained approximately 95% equipment readiness.</li>
+              <li>Earned the Army Mechanics Badge and held a former U.S. Department of Defense Secret Security Clearance.</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="resume-actions">
+      <a class="btn" href="javascript:window.print()">Print / Save as PDF 📄</a>
+      <p class="print-note">Use your browser print dialog and choose “Save as PDF.”</p>
+    </div>
+  </body>
+</html>
