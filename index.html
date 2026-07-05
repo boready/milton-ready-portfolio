@@ -5,544 +5,551 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milton Ready | Cybersecurity & IT Professional</title>
     <style>
-            * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-            }
-            :root {
-              --blue: #0b6ff3;
-              --blue-dark: #061b3d;
-              --navy: #07152e;
-              --text: #17233a;
-              --muted: #5f7190;
-              --light: #f6f9fd;
-              --white: #fff;
-              --line: #dbe6f3;
-              --green: #16a34a;
-              --red: #dc2626;
-              --shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
-              --radius: 14px;
-            }
-            html {
-              scroll-behavior: smooth;
-            }
-            body {
-              font-family:
-                Segoe UI,
-                Tahoma,
-                Geneva,
-                Verdana,
-                sans-serif;
-              background: var(--light);
-              color: var(--text);
-              line-height: 1.6;
-            }
-            a {
-              text-decoration: none;
-              color: inherit;
-            }
-            nav {
-              position: sticky;
-              top: 0;
-              z-index: 1000;
-              background: #fff;
-              border-bottom: 1px solid var(--line);
-              box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
-            }
-            .nav-wrap {
-              max-width: 1180px;
-              margin: auto;
-              padding: 0.8rem 1.5rem;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              gap: 1rem;
-            }
-            .brand {
-              font-weight: 800;
-              color: var(--blue);
-              font-size: 1.4rem;
-              line-height: 1.1;
-            }
-            .brand small {
-              display: block;
-              color: var(--text);
-              font-size: 0.78rem;
-              font-weight: 600;
-              margin-top: 0.15rem;
-            }
-            .nav-links {
-              display: flex;
-              gap: 1.6rem;
-              list-style: none;
-              font-size: 0.9rem;
-              font-weight: 700;
-            }
-            .nav-links a {
-              padding: 0.5rem 0.1rem;
-              border-bottom: 3px solid transparent;
-            }
-            .nav-links a:hover {
-              color: var(--blue);
-              border-color: var(--blue);
-            }
-            .hero {
-              background:
-                radial-gradient(
-                  circle at 85% 25%,
-                  rgba(30, 111, 255, 0.32),
-                  transparent 30%
-                ),
-                linear-gradient(135deg, #061735, #0a2e66 58%, #041329);
-              color: #fff;
-              padding: 4.6rem 1.5rem 0;
-              overflow: hidden;
-            }
-            .hero-inner {
-              max-width: 1180px;
-              margin: auto;
-              display: grid;
-              grid-template-columns: 1.35fr 0.65fr;
-              gap: 2rem;
-              align-items: center;
-            }
-            .eyebrow {
-              color: #69a8ff;
-              text-transform: uppercase;
-              font-size: 0.85rem;
-              font-weight: 800;
-              letter-spacing: 0.12em;
-              margin-bottom: 0.7rem;
-            }
-            .hero h1 {
-              font-size: 3.1rem;
-              line-height: 1.08;
-              margin-bottom: 0.75rem;
-            }
-            .hero h2 {
-              font-size: 1.18rem;
-              margin-bottom: 1rem;
-            }
-            .hero p {
-              max-width: 700px;
-              color: #e5efff;
-              font-size: 1rem;
-            }
-            .hero-actions {
-              display: flex;
-              gap: 1rem;
-              flex-wrap: wrap;
-              margin-top: 1.6rem;
-            }
-            .btn {
-              padding: 0.85rem 1.45rem;
-              border-radius: 7px;
-              font-weight: 800;
-              display: inline-flex;
-              align-items: center;
-              gap: 0.5rem;
-            }
-            .btn-primary {
-              background: var(--blue);
-              color: #fff;
-            }
-            .btn-outline {
-              border: 2px solid rgba(255, 255, 255, 0.75);
-              color: #fff;
-            }
-            .hero-art {
-              display: flex;
-              justify-content: center;
-            }
-            .shield {
-              width: 230px;
-              height: 230px;
-              border: 2px solid rgba(64, 153, 255, 0.45);
-              border-radius: 34% 34% 44% 44%;
-              display: grid;
-              place-items: center;
-              background: rgba(5, 30, 70, 0.28);
-              box-shadow: 0 0 80px rgba(30, 111, 255, 0.25) inset;
-            }
-            .shield span {
-              font-size: 5rem;
-              color: #4ca3ff;
-            }
-            .hero-strip {
-              margin-top: 3rem;
-              background: rgba(0, 39, 91, 0.8);
-              border-top: 1px solid rgba(255, 255, 255, 0.12);
-            }
-            .strip-grid {
-              max-width: 1180px;
-              margin: auto;
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 0;
-            }
-            .strip-item {
-              padding: 1.2rem 1.5rem;
-              display: flex;
-              gap: 1rem;
-              align-items: center;
-              border-right: 1px solid rgba(255, 255, 255, 0.14);
-            }
-            .strip-item:last-child {
-              border-right: 0;
-            }
-            .strip-icon {
-              font-size: 1.75rem;
-              color: #65a7ff;
-            }
-            .strip-item strong {
-              display: block;
-              color: #fff;
-            }
-            .strip-item span {
-              font-size: 0.82rem;
-              color: #d8e8ff;
-            }
-            section {
-              max-width: 1180px;
-              margin: 0 auto;
-              padding: 4rem 1.5rem;
-            }
-            .section-title {
-              text-align: center;
-              font-size: 2rem;
-              line-height: 1.2;
-              margin-bottom: 0.6rem;
-            }
-            .section-title:after {
-              content: "";
-              display: block;
-              width: 45px;
-              height: 3px;
-              background: var(--blue);
-              margin: 0.8rem auto 0;
-              border-radius: 99px;
-            }
-            .section-subtitle {
-              text-align: center;
-              color: var(--muted);
-              margin-bottom: 2.2rem;
-            }
-            .about-grid {
-              display: grid;
-              grid-template-columns: 1fr 0.95fr;
-              gap: 3rem;
-              align-items: start;
-            }
-            .section-kicker {
-              color: var(--blue);
-              font-weight: 900;
-              text-transform: uppercase;
-              letter-spacing: 0.08em;
-              font-size: 0.85rem;
-              margin-bottom: 0.6rem;
-            }
-            .about h2 {
-              font-size: 2rem;
-              line-height: 1.15;
-              margin-bottom: 1rem;
-            }
-            .about p {
-              color: #2d3b52;
-              margin-bottom: 1rem;
-            }
-            .focus-card,
-            .card {
-              background: #fff;
-              border: 1px solid var(--line);
-              border-radius: var(--radius);
-              box-shadow: var(--shadow);
-            }
-            .focus-card {
-              padding: 1.7rem;
-            }
-            .focus-card h3 {
-              margin-bottom: 1rem;
-            }
-            .focus-list {
-              list-style: none;
-              display: grid;
-              gap: 0.75rem;
-            }
-            .focus-list li {
-              display: flex;
-              gap: 0.6rem;
-              align-items: flex-start;
-            }
-            .check {
-              color: var(--blue);
-              font-weight: 900;
-            }
-            .stats {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              gap: 1rem;
-              margin-top: 1.6rem;
-            }
-            .stat {
-              background: #fff;
-              border: 1px solid var(--line);
-              border-radius: 10px;
-              text-align: center;
-              padding: 1rem;
-              box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
-            }
-            .stat b {
-              font-size: 1.35rem;
-              color: var(--blue);
-              display: block;
-            }
-            .stat span {
-              font-size: 0.78rem;
-              color: var(--muted);
-              font-weight: 700;
-            }
-            .cert-note {
-              text-align: center;
-              color: var(--muted);
-              font-size: 0.92rem;
-              margin-top: -1rem;
-              margin-bottom: 1.6rem;
-            }
-            .grid-3 {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 1.4rem;
-            }
-            .cert {
-              padding: 1.5rem;
-              border-left: 4px solid var(--blue);
-              min-height: 205px;
-            }
-            .cert.expired {
-              border-left-color: #ef4444;
-            }
-            .cert h3 {
-              font-size: 1.08rem;
-              margin: 0.8rem 0 0.5rem;
-              color: #083c8b;
-            }
-            .cert.expired h3 {
-              color: #c1121f;
-            }
-            .icon {
-              width: 52px;
-              height: 52px;
-              border-radius: 12px;
-              background: #eff6ff;
-              display: grid;
-              place-items: center;
-              font-size: 1.6rem;
-            }
-            .expired .icon {
-              background: #fff1f2;
-            }
-            .issuer,
-            .date {
-              font-size: 0.86rem;
-              color: var(--muted);
-              margin: 0.35rem 0;
-            }
-            .badge {
-              display: inline-block;
-              border-radius: 999px;
-              padding: 0.28rem 0.72rem;
-              font-size: 0.72rem;
-              font-weight: 900;
-              margin-top: 0.45rem;
-            }
-            .active {
-              background: #dcfce7;
-              color: #067647;
-            }
-            .completed {
-              background: #dcfce7;
-              color: #067647;
-            }
-            .expired-badge {
-              background: #fee2e2;
-              color: #b91c1c;
-            }
-            .skills-grid {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-              gap: 1.4rem;
-            }
-            .skill-card {
-              width: 260px;
-              padding: 1.35rem;
-            }
-            .skill-card h3 {
-              color: var(--blue);
-              font-size: 1.08rem;
-              margin-bottom: 1rem;
-            }
-            .skill-row {
-              display: flex;
-              justify-content: space-between;
-              gap: 0.8rem;
-              align-items: center;
-              margin: 0.7rem 0;
-              font-weight: 700;
-            }
-            .skill-row span:first-child {
-              font-size: 0.9rem;
-            }
-            .pill {
-              background: #f0f6ff;
-              color: var(--blue);
-              font-size: 0.68rem;
-              padding: 0.18rem 0.55rem;
-              border-radius: 999px;
-              font-weight: 900;
-              white-space: nowrap;
-            }
-            .project-grid {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 1.2rem;
-            }
-            .project {
-              padding: 1.4rem;
-            }
-            .project h3 {
-              color: #064ea8;
-              font-size: 1.12rem;
-              margin-bottom: 0.4rem;
-            }
-            .project strong {
-              display: block;
-              font-size: 0.85rem;
-              margin-bottom: 1rem;
-            }
-            .project ul,
-            .exp ul {
-              padding-left: 1.1rem;
-            }
-            .project li,
-            .exp li {
-              margin: 0.55rem 0;
-              color: var(--muted);
-              font-size: 0.9rem;
-            }
-            .project li::marker,
-            .exp li::marker {
-              color: var(--green);
-            }
-            .exp {
-              padding: 1.8rem;
-              margin-bottom: 1.3rem;
-            }
-            .exp-head {
-              display: flex;
-              justify-content: space-between;
-              gap: 1rem;
-              margin-bottom: 0.5rem;
-            }
-            .exp h3 {
-              color: var(--blue);
-            }
-            .company {
-              font-weight: 800;
-            }
-            .date-right {
-              color: var(--muted);
-              font-weight: 700;
-              font-size: 0.9rem;
-              white-space: nowrap;
-            }
-      .contact-grid {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        /* Resume-matched palette from uploaded resume */
+        --blue: #3a8c95;
+        --blue-dark: #2f737b;
+        --navy: #244d53;
+        --text: #1f2933;
+        --muted: #5f666d;
+        --light: #e1dfdd;
+        --white: #fff;
+        --line: #e6e6e6;
+        --green: #3a8c95;
+        --red: #8f4f4f;
+        --shadow: 0 10px 25px rgba(31, 41, 51, 0.1);
+        --radius: 14px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          Segoe UI,
+          Tahoma,
+          Geneva,
+          Verdana,
+          sans-serif;
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+      }
+      .nav-wrap {
+        max-width: 1180px;
+        margin: auto;
+        padding: 0.8rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .brand {
+        font-weight: 800;
+        color: var(--blue);
+        font-size: 1.4rem;
+        line-height: 1.1;
+      }
+      .brand small {
+        display: block;
+        color: var(--text);
+        font-size: 0.78rem;
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.6rem;
+        list-style: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      .nav-links a {
+        padding: 0.5rem 0.1rem;
+        border-bottom: 3px solid transparent;
+      }
+      .nav-links a:hover {
+        color: var(--blue);
+        border-color: var(--blue);
+      }
+      .hero {
+        background:
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(58, 140, 149, 0.28),
+            transparent 30%
+          ),
+          linear-gradient(135deg, #244d53, #3a8c95 58%, #1f3f45);
+        color: #fff;
+        padding: 4.6rem 1.5rem 0;
+        overflow: hidden;
+      }
+      .hero-inner {
+        max-width: 1180px;
+        margin: auto;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      .eyebrow {
+        color: #d7f0f2;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        margin-bottom: 0.7rem;
+      }
+      .hero h1 {
+        font-size: 3.1rem;
+        line-height: 1.08;
+        margin-bottom: 0.75rem;
+      }
+      .hero h2 {
+        font-size: 1.18rem;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        max-width: 700px;
+        color: #f8fbfb;
+        font-size: 1rem;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1.6rem;
+      }
+      .btn {
+        padding: 0.85rem 1.45rem;
+        border-radius: 7px;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-primary {
+        background: var(--blue);
+        color: #fff;
+      }
+      .btn-outline {
+        border: 2px solid rgba(255, 255, 255, 0.75);
+        color: #fff;
+      }
+      .hero-art {
+        display: flex;
+        justify-content: center;
+      }
+      .shield {
+        width: 230px;
+        height: 230px;
+        border: 2px solid rgba(225, 223, 221, 0.55);
+        border-radius: 34% 34% 44% 44%;
+        display: grid;
+        place-items: center;
+        background: rgba(31, 63, 69, 0.28);
+        box-shadow: 0 0 80px rgba(58, 140, 149, 0.28) inset;
+      }
+      .shield span {
+        font-size: 5rem;
+        color: #e1dfdd;
+      }
+      .hero-strip {
+        margin-top: 3rem;
+        background: rgba(36, 77, 83, 0.86);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .strip-grid {
+        max-width: 1180px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+      .strip-item {
+        padding: 1.2rem 1.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      .strip-item:last-child {
+        border-right: 0;
+      }
+      .strip-icon {
+        font-size: 1.75rem;
+        color: #e1dfdd;
+      }
+      .strip-item strong {
+        display: block;
+        color: #fff;
+      }
+      .strip-item span {
+        font-size: 0.82rem;
+        color: #f4f4f4;
+      }
+      section {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.6rem;
+      }
+      .section-title:after {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 3px;
+        background: var(--blue);
+        margin: 0.8rem auto 0;
+        border-radius: 99px;
+      }
+      .section-subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 2.2rem;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.95fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .section-kicker {
+        color: var(--blue);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+      }
+      .about h2 {
+        font-size: 2rem;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+      .about p {
+        color: #2c3338;
+        margin-bottom: 1rem;
+      }
+      .focus-card,
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .focus-card {
+        padding: 1.7rem;
+      }
+      .focus-card h3 {
+        margin-bottom: 1rem;
+      }
+      .focus-list {
+        list-style: none;
+        display: grid;
+        gap: 0.75rem;
+      }
+      .focus-list li {
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+      }
+      .check {
+        color: var(--blue);
+        font-weight: 900;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 1.6rem;
+      }
+      .stat {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      }
+      .stat b {
+        font-size: 1.35rem;
+        color: var(--blue);
+        display: block;
+      }
+      .stat span {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .cert-note {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-top: -1rem;
+        margin-bottom: 1.6rem;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+      }
+      .cert {
+        padding: 1.5rem;
+        border-left: 4px solid var(--blue);
+        min-height: 205px;
+      }
+      .cert.expired {
+        border-left-color: #8f4f4f;
+      }
+      .cert h3 {
+        font-size: 1.08rem;
+        margin: 0.8rem 0 0.5rem;
+        color: #2f737b;
+      }
+      .cert.expired h3 {
+        color: #7a3d3d;
+      }
+      .icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: #f4f4f3;
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+      }
+      .expired .icon {
+        background: #f5eeee;
+      }
+      .issuer,
+      .date {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin: 0.35rem 0;
+      }
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 0.28rem 0.72rem;
+        font-size: 0.72rem;
+        font-weight: 900;
+        margin-top: 0.45rem;
+      }
+      .active {
+        background: #e7f3f4;
+        color: #2f737b;
+      }
+      .completed {
+        background: #e7f3f4;
+        color: #2f737b;
+      }
+      .expired-badge {
+        background: #f0e3e3;
+        color: #7a3d3d;
+      }
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.4rem;
+      }
+      .skill-card {
+        width: 260px;
+        padding: 1.35rem;
+      }
+      .skill-card h3 {
+        color: var(--blue);
+        font-size: 1.08rem;
+        margin-bottom: 1rem;
+      }
+      .skill-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        align-items: center;
+        margin: 0.7rem 0;
+        font-weight: 700;
+      }
+      .skill-row span:first-child {
+        font-size: 0.9rem;
+      }
+      .pill {
+        background: #eef3f3;
+        color: var(--blue);
+        font-size: 0.68rem;
+        padding: 0.18rem 0.55rem;
+        border-radius: 999px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.2rem;
       }
-      .contact {
-        padding: 1.5rem 1rem;
-        min-height: 170px;
-        text-align: center;
+      .project {
+        padding: 1.4rem;
+      }
+      .project h3 {
+        color: #2f737b;
+        font-size: 1.12rem;
+        margin-bottom: 0.4rem;
+      }
+      .project strong {
+        display: block;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+      .project ul,
+      .exp ul {
+        padding-left: 1.1rem;
+      }
+      .project li,
+      .exp li {
+        margin: 0.55rem 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .project li::marker,
+      .exp li::marker {
+        color: var(--green);
+      }
+      .exp {
+        padding: 1.8rem;
+        margin-bottom: 1.3rem;
+      }
+      .exp-head {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .exp h3 {
+        color: var(--blue);
+      }
+      .company {
+        font-weight: 800;
+      }
+      .date-right {
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      .cta {
+        background: linear-gradient(135deg, #2f737b, #244d53);
+        color: #fff;
+        border-radius: 12px;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
         align-items: center;
+      }
+      .cta p {
+        color: #f4f4f4;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+      .contact {
+        padding: 1.2rem;
+        text-align: center;
       }
       .contact h3 {
         color: var(--blue);
-        margin: 0.75rem 0 0.5rem;
-        font-size: 1.05rem;
+        margin: 0.4rem 0;
       }
       .contact p,
       .contact a {
         color: var(--muted);
         font-weight: 700;
-        font-size: 0.9rem;
-        word-break: break-word;
       }
-            footer {
-              text-align: center;
-              padding: 2rem;
-              color: var(--muted);
-            }
-            @media (max-width: 900px) {
-              .hero-inner,
-              .about-grid,
-              .project-grid {
-                grid-template-columns: 1fr;
-              }
-              .strip-grid,
-              .stats,
-              .contact-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-              .grid-3 {
-                grid-template-columns: 1fr 1fr;
-              }
-              .hero h1 {
-                font-size: 2.4rem;
-              }
-              .hero-art {
-                display: none;
-              }
-              .nav-links {
-                gap: 0.8rem;
-                font-size: 0.78rem;
-              }
-            }
-            @media (max-width: 600px) {
-              .grid-3,
-              .strip-grid,
-              .stats,
-              .contact-grid {
-                grid-template-columns: 1fr;
-              }
-              .nav-wrap {
-                align-items: flex-start;
-              }
-              .nav-links {
-                width: 100%;
-                overflow: auto;
-              }
-              .hero {
-                padding-top: 3rem;
-              }
-              .hero h1 {
-                font-size: 2rem;
-              }
-              .skill-card {
-                width: 100%;
-              }
-              .exp-head,
-                flex-direction: column;
-              }
-              .date-right {
-                white-space: normal;
-              }
-            }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--muted);
+      }
+      @media (max-width: 900px) {
+        .hero-inner,
+        .about-grid,
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+        .strip-grid,
+        .stats,
+        .contact-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-3 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero h1 {
+          font-size: 2.4rem;
+        }
+        .hero-art {
+          display: none;
+        }
+        .nav-links {
+          gap: 0.8rem;
+          font-size: 0.78rem;
+        }
+      }
+      @media (max-width: 600px) {
+        .grid-3,
+        .strip-grid,
+        .stats,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-wrap {
+          align-items: flex-start;
+        }
+        .nav-links {
+          width: 100%;
+          overflow: auto;
+        }
+        .hero {
+          padding-top: 3rem;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .skill-card {
+          width: 100%;
+        }
+        .exp-head,
+        .cta {
+          flex-direction: column;
+        }
+        .date-right {
+          white-space: normal;
+        }
+      }
     </style>
   </head>
   <body>
@@ -594,15 +601,8 @@
             knowledge through hands-on learning and real-world application.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-outline" href="#projects"> View My Work 💼 </a>
-
-            <a class="btn btn-outline" href="resume.html" target="_blank">
-              View Resume 📄
-            </a>
-
-            <a class="btn btn-primary" href="mailto:bo.ready@yahoo.com">
-              Contact Me ✉
-            </a>
+            <a class="btn btn-primary" href="#projects">View My Work 💼</a>
+            <a class="btn btn-outline" href="#contact">Contact Me ✉</a>
           </div>
         </div>
         <div class="hero-art">
@@ -717,157 +717,76 @@
       </div>
     </section>
 
-<section id="education">
-  <h2 class="section-title">Education & Coursework</h2>
+    <section id="education">
+      <h2 class="section-title">Education & Coursework</h2>
+      <p class="section-subtitle">
+        Academic credentials and transcript-supported coursework.
+      </p>
 
-  <p class="section-subtitle">
-    Academic credentials and transcript-supported coursework
-  </p>
+      <div class="project-grid">
+        <div class="card project">
+          <h3>Fort Hays State University</h3>
+          <strong>
+            Bachelor of Science in Information Networking & Telecommunications
+          </strong>
 
-  <div class="skills-grid">
+          <ul>
+            <li>Cybersecurity Concentration</li>
+            <li>Applied Data Analytics Certificate</li>
+            <li>Graduated May 15, 2026</li>
+            <li>Official GPA: 3.68</li>
+            <li>Dean's Honor Roll</li>
+          </ul>
+        </div>
 
-    <div class="card skill-card">
-      <h3>🎓 Fort Hays State University</h3>
+        <div class="card project">
+          <h3>Cybersecurity & Policy</h3>
 
-      <div class="skill-row">
-        <span>B.S. Information Networking & Telecommunications</span>
-        <span class="pill">Graduate</span>
+          <ul>
+            <li>Cyber Operations</li>
+            <li>Network Security Firewalls</li>
+            <li>Public Policy, Law & Ethics in Telecommunications</li>
+            <li>Technology in Society</li>
+          </ul>
+        </div>
+
+        <div class="card project">
+          <h3>Networking & Systems</h3>
+
+          <ul>
+            <li>Internetworking I</li>
+            <li>Internetworking II</li>
+            <li>Linux in Networking</li>
+            <li>Windows Client Administration</li>
+            <li>Foundations of Informatics</li>
+          </ul>
+        </div>
+
+        <div class="card project">
+          <h3>Programming & Development</h3>
+
+          <ul>
+            <li>Programming with Python</li>
+            <li>Database Design & Programming</li>
+            <li>Introduction to Web Development</li>
+            <li>Front-End Web Development I</li>
+            <li>Introduction to Human-Computer Interaction</li>
+          </ul>
+        </div>
+
+        <div class="card project">
+          <h3>Analytics, Research & Capstone</h3>
+
+          <ul>
+            <li>Data Analytics I</li>
+            <li>Big Data Analytics</li>
+            <li>Research Methods in Informatics</li>
+            <li>Capstone Seminar in Informatics</li>
+            <li>Critical Thinking</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="skill-row">
-        <span>Cybersecurity Concentration</span>
-        <span class="pill">Completed</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Applied Data Analytics Certificate</span>
-        <span class="pill">Completed</span>
-      </div>
-
-      <div class="skill-row">
-        <span>GPA</span>
-        <span class="pill">3.68</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Dean's Honor Roll</span>
-        <span class="pill">Award</span>
-      </div>
-    </div>
-
-    <div class="card skill-card">
-      <h3>🛡️ Cybersecurity & Policy</h3>
-
-      <div class="skill-row">
-        <span>Cyber Operations</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Network Security Firewalls</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Law & Ethics</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Technology in Society</span>
-        <span class="pill">Course</span>
-      </div>
-    </div>
-
-    <div class="card skill-card">
-      <h3>🌐 Networking & Systems</h3>
-
-      <div class="skill-row">
-        <span>Internetworking I</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Internetworking II</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Linux in Networking</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Windows Administration</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Foundations of Informatics</span>
-        <span class="pill">Course</span>
-      </div>
-    </div>
-
-    <div class="card skill-card">
-      <h3>💻 Programming & Development</h3>
-
-      <div class="skill-row">
-        <span>Programming with Python</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Database Design</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Web Development</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Front-End Development</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Human Computer Interaction</span>
-        <span class="pill">Course</span>
-      </div>
-    </div>
-
-    <div class="card skill-card">
-      <h3>📊 Analytics & Research</h3>
-
-      <div class="skill-row">
-        <span>Data Analytics I</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Big Data Analytics</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Research Methods</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Capstone Seminar</span>
-        <span class="pill">Course</span>
-      </div>
-
-      <div class="skill-row">
-        <span>Critical Thinking</span>
-        <span class="pill">Course</span>
-      </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <section id="certifications">
       <h2 class="section-title">Certifications & Training</h2>
@@ -1074,154 +993,110 @@
     <section id="projects">
       <h2 class="section-title">Relevant Projects</h2>
       <p class="section-subtitle">
-        Cybersecurity, networking, automation, data, and educational technology
-        projects
+        Cybersecurity, Networking, Automation, Data, and Educational Technology
+        Projects
       </p>
-
-      <div class="skills-grid">
-        <div class="card skill-card">
-          <h3>🐍 Wamego Python Game Lab</h3>
-
-          <div class="skill-row">
-            <span>Python Curriculum</span>
-            <span class="pill">Lead</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Installer & Launcher</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Automated Grading</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Teacher Documentation</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Python Games</span>
-            <span class="pill">9 Games</span>
-          </div>
+      <div class="project-grid">
+        <div class="card project">
+          <h3>Wamego Python Game Lab</h3>
+          <strong>Lead Developer & Curriculum Designer</strong>
+          <ul>
+            <li>
+              Built a complete 4-week Python programming curriculum for high
+              school students with no prior coding experience.
+            </li>
+            <li>
+              Developed a professional installer and launcher system with
+              one-click access to lessons, exercises, quizzes, and capstone
+              folders.
+            </li>
+            <li>
+              Created automated grading, CSV reporting, quiz tools, bug hunt
+              activities, capstone rubrics, and teacher documentation.
+            </li>
+            <li>
+              Designed lessons where students build 9 real Python games and
+              complete an original capstone game.
+            </li>
+          </ul>
+        </div>
+        <div class="card project">
+          <h3>Student Security Operations Center</h3>
+          <strong>Fort Hays State University</strong>
+          <ul>
+            <li>
+              Participated on the Wazuh Indexer Team supporting log ingestion,
+              indexing, troubleshooting, security event review, and operational
+              SOC activities.
+            </li>
+            <li>
+              Collaborated with detection and monitoring teams to keep security
+              data available for investigation and analysis.
+            </li>
+            <li>
+              Built practical experience with SIEM concepts, alert review, event
+              correlation, and security operations workflows.
+            </li>
+          </ul>
+        </div>
+        <div class="card project">
+          <h3>Cybersecurity and Networking Labs</h3>
+          <strong>Academic / Hands-On Projects</strong>
+          <ul>
+            <li>
+              Created Splunk dashboards, performed log analysis, reviewed
+              events, and generated reports.
+            </li>
+            <li>
+              Conducted Nessus vulnerability scans, reviewed findings, performed
+              risk analysis, and documented remediation recommendations.
+            </li>
+            <li>
+              Used Wireshark, Nmap, Metasploit, Burp Suite, pfSense, and
+              OPNsense in security lab environments.
+            </li>
+          </ul>
+        </div>
+        <div class="card project">
+          <h3>Python, Database, Web, Analytics & Custom Projects</h3>
+          <strong>Coursework / Independent Development</strong>
+          <ul>
+            <li>
+              Completed Python automation scripts, logging utilities, file
+              processing tools, and custom module development.
+            </li>
+            <li>
+              Designed SQL databases, schemas, entity relationship models,
+              queries, and documentation.
+            </li>
+            <li>
+              Built responsive web pages using HTML, CSS, navigation systems,
+              and multi-page website design.
+            </li>
+            <li>
+              Completed analytics projects involving data collection, analysis,
+              reporting, visualization, and research.
+            </li>
+          </ul>
         </div>
 
-        <div class="card skill-card">
-          <h3>🛡️ Student SOC</h3>
-
-          <div class="skill-row">
-            <span>Wazuh Indexer Team</span>
-            <span class="pill">Hands-On</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Log Ingestion</span>
-            <span class="pill">Hands-On</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Alert Review</span>
-            <span class="pill">Hands-On</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Event Correlation</span>
-            <span class="pill">Hands-On</span>
-          </div>
-
-          <div class="skill-row">
-            <span>SOC Workflows</span>
-            <span class="pill">Hands-On</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>🔐 Security Labs</h3>
-
-          <div class="skill-row">
-            <span>Splunk Dashboards</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Nessus Scanning</span>
-            <span class="pill">Hands-On</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Wireshark Analysis</span>
-            <span class="pill">Hands-On</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Nmap / Metasploit</span>
-            <span class="pill">Lab</span>
-          </div>
-
-          <div class="skill-row">
-            <span>OPNsense / pfSense</span>
-            <span class="pill">Lab</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>💻 Development Projects</h3>
-
-          <div class="skill-row">
-            <span>Python Automation</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Logging Utilities</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>File Processing Tools</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>SQL Databases</span>
-            <span class="pill">Built</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Responsive Websites</span>
-            <span class="pill">Built</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>📊 Data Analytics Projects</h3>
-
-          <div class="skill-row">
-            <span>Data Collection</span>
-            <span class="pill">Completed</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Data Analysis</span>
-            <span class="pill">Completed</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Visualization</span>
-            <span class="pill">Completed</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Reporting</span>
-            <span class="pill">Completed</span>
-          </div>
-
-          <div class="skill-row">
-            <span>Research Methods</span>
-            <span class="pill">Completed</span>
-          </div>
+        <div class="card project">
+          <h3>Applied Data Analytics Certificate Projects</h3>
+          <strong>Fort Hays State University</strong>
+          <ul>
+            <li>
+              Completed analytics coursework involving data collection, data
+              analysis, visualization, and reporting.
+            </li>
+            <li>
+              Applied database, Python, research, and technical communication
+              skills to solve structured information problems.
+            </li>
+            <li>
+              Connected security, networking, and data skills to support
+              technical decision-making.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1423,26 +1298,33 @@
     </section>
 
     <section id="contact">
-      <h2 class="section-title">Let's Connect</h2>
-
-      <p class="section-subtitle">
-        Contact information, resume access, professional networking, and career
-        opportunities.
-      </p>
-
+      <div class="cta">
+        <div>
+          <h2>Let's Work Together</h2>
+          <p>
+            I am open to discussing new opportunities, cybersecurity challenges,
+            technical projects, and ways I can contribute value to your
+            organization.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-outline" href="#projects">View My Work 💼</a
+          ><a class="btn btn-primary" href="mailto:bo.ready@yahoo.com"
+            >Contact Me ✉</a
+          >
+        </div>
+      </div>
       <div class="contact-grid" style="margin-top: 1.5rem">
         <div class="card contact">
           <div>📧</div>
           <h3>Email</h3>
           <a href="mailto:bo.ready@yahoo.com">bo.ready@yahoo.com</a>
         </div>
-
         <div class="card contact">
           <div>📱</div>
           <h3>Phone</h3>
           <p>785-955-0745</p>
         </div>
-
         <div class="card contact">
           <div>💼</div>
           <h3>LinkedIn</h3>
@@ -1450,19 +1332,9 @@
             href="https://www.linkedin.com/in/readym"
             target="_blank"
             rel="noopener noreferrer"
+            >linkedin.com/in/readym</a
           >
-            linkedin.com/in/readym
-          </a>
         </div>
-
-        <div class="card contact">
-          <div>📄</div>
-          <h3>Resume</h3>
-          <a href="resume.html" target="_blank" rel="noopener noreferrer">
-            View Resume
-          </a>
-        </div>
-
         <div class="card contact">
           <div>📍</div>
           <h3>Location</h3>
